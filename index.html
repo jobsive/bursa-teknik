@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Bursa Teknik Merkezi | Beyaz Eşya Bölge Özel Onarım Servisi</title>
+    <meta name="description" content="Bursa genelinde kurumsal kalitede beyaz eşya özel teknik servis hizmetleri. Bosch, Siemens, Profilo ve diğer markalar için garantili ve hızlı yerinde bakım.">
+    <style>
+        /* --- HIGH-END CORPORATE BRANDING STANDARD --- */
+        :root {
+            --brand-bg: #ffffff;
+            --brand-nav-bg: rgba(255, 255, 255, 0.9);
+            --brand-dark: #0f1214;
+            --brand-muted: #4e5961;
+            --brand-light-grey: #f7f9fa;
+            --brand-border: #e1e5e8;
+            --brand-blue: #004b79;
+            --brand-blue-hover: #003353;
+            --brand-blue-light: #e6f0f7;
+            --brand-accent: #dc000d; 
+            --brand-success: #146c2e;
+            --brand-success-light: #e1f5e7;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); -webkit-font-smoothing: antialiased; letter-spacing: -0.015em; }
+        html, body { width: 100%; overflow-x: hidden; background-color: var(--brand-bg); color: var(--brand-dark); scroll-behavior: smooth; }
+        
+        a { text-decoration: none; color: inherit; }
+
+        /* --- NAVIGATION --- */
+        nav { background: var(--brand-nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--brand-border); position: fixed; top: 0; width: 100%; z-index: 9999; }
+        .nav-container { max-width: 1200px; margin: 0 auto; height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+        .nav-brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 19px; color: var(--brand-dark); text-transform: uppercase; letter-spacing: 0.03em; }
+        .brand-badge { background: var(--brand-blue); color: #ffffff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 2px; letter-spacing: 0.06em; }
+        .nav-cta { background: var(--brand-dark); color: #ffffff; padding: 10px 22px; border-radius: 4px; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+        .nav-cta:hover { background: var(--brand-blue); }
+
+        /* --- HERO SECTION --- */
+        header { max-width: 1200px; margin: 0 auto; padding: 160px 24px 80px 24px; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 48px; }
+        .hero-content { width: 100%; }
+        .hero-image-area { width: 100%; display: flex; justify-content: center; align-items: center; }
+
+        .appliance-render { width: 300px; height: 410px; background: linear-gradient(145deg, #ffffff 0%, #eef3f7 100%); border: 5px solid #cbd2db; border-radius: 14px; position: relative; box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.1); }
+        .appliance-panel { height: 70px; border-bottom: 3px solid #cbd2db; background: #f1f4f7; border-radius: 9px 9px 0 0; padding: 16px; display: flex; justify-content: space-between; align-items: center; }
+        .appliance-dial { width: 26px; height: 26px; border-radius: 50%; background: #ffffff; border: 2.5px solid #a4adb8; box-shadow: inset 0 2px 4px rgba(0,0,0,0.08); }
+        .appliance-display { width: 95px; height: 24px; background: #090b0c; border-radius: 4px; color: #22c55e; font-family: monospace; font-size: 10px; font-weight: 700; text-align: center; line-height: 24px; }
+        .appliance-door { width: 230px; height: 230px; border-radius: 50%; border: 9px solid #b9c1cc; margin: 45px auto 0 auto; background: radial-gradient(circle, rgba(15,18,20,0.03) 0%, rgba(15,18,20,0.15) 100%); }
+
+        .status-pill { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-success-light); border: 1px solid rgba(20, 108, 46, 0.15); padding: 6px 14px; border-radius: 30px; font-size: 13px; font-weight: 700; color: var(--brand-success); margin-bottom: 24px; }
+        .status-dot { width: 8px; height: 8px; background-color: var(--brand-success); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--brand-success); }
+
+        h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
+        h1 span { color: var(--brand-blue); }
+        .lead { font-size: clamp(16px, 2vw, 19px); color: var(--brand-muted); margin-bottom: 36px; line-height: 1.6; }
+
+        .cta-box { background: var(--brand-light-grey); border: 1px solid var(--brand-border); border-radius: 8px; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .cta-info h4 { font-size: 13px; text-transform: uppercase; color: var(--brand-muted); letter-spacing: 0.08em; }
+        .cta-info p { font-size: clamp(20px, 2.5vw, 26px); font-weight: 800; }
+
+        .btn-call { background-color: var(--brand-accent); color: #ffffff; padding: 16px 32px; border-radius: 4px; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 6px 20px rgba(220, 0, 13, 0.25); transition: all 0.2s; border: none; cursor: pointer; }
+        .btn-call:hover { background-color: #b3000a; transform: translateY(-2px); }
+
+        /* --- TRUST HUB STRIP --- */
+        .trust-strip { background: var(--brand-dark); color: #ffffff; padding: 30px 0; }
+        .trust-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 24px; gap: 32px; }
+        .trust-item { display: flex; align-items: center; gap: 16px; font-size: 15px; font-weight: 500; }
+        .trust-item svg { color: var(--brand-blue-light); flex-shrink: 0; background: rgba(255, 255, 255, 0.08); padding: 8px; border-radius: 6px; }
+
+        /* --- SERVICES & BLOG FEED GRID --- */
+        main { max-width: 1200px; margin: 0 auto; padding: 100px 24px; }
+        .section-header { margin-bottom: 50px; border-left: 5px solid var(--brand-blue); padding-left: 20px; }
+        .section-header h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 800; }
+
+        .services-grid, .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        .service-card, .blog-card { background: var(--brand-bg); border: 1px solid var(--brand-border); border-radius: 8px; padding: 40px; transition: all 0.3s; }
+        .service-card:hover, .blog-card:hover { border-color: var(--brand-blue); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0, 75, 121, 0.06); }
+        .service-icon { width: 56px; height: 56px; background: linear-gradient(135deg, var(--brand-blue-light) 0%, #ffffff 100%); color: var(--brand-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 28px; border: 1px solid rgba(0, 75, 121, 0.12); }
+
+        .seo-panel { background: var(--brand-light-grey); border: 1px solid var(--brand-border); border-radius: 12px; padding: 48px; }
+        .seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        .district-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .district-btn { background: #ffffff; border: 1px solid var(--brand-border); padding: 12px; border-radius: 6px; font-size: 14px; text-align: center; font-weight: 600; color: var(--brand-dark); }
+
+        /* --- FOOTER & COMPLIANCE --- */
+        footer { background: #ffffff; border-top: 1px solid var(--brand-border); padding: 80px 24px 40px 24px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+        .disclaimer-text { font-size: 10px; color: #a0aab0; line-height: 1.6; margin-bottom: 50px; text-align: justify; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-top: 24px; border-top: 1px solid var(--brand-border); font-size: 13px; color: var(--brand-muted); }
+
+        /* --- RESPONSIVE ENGINE --- */
+        @media (max-width: 1024px) { header { grid-template-columns: 1fr; text-align: center; padding-top: 130px; } .hero-image-area { display: none; } .cta-box { flex-direction: column; text-align: center; } .btn-call { width: 100%; justify-content: center; } .seo-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .trust-container { grid-template-columns: 1fr; } .district-list { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--brand-blue);"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                Bursa Teknik <span class="brand-badge">ÖZEL SERVİS</span>
+            </a>
+            <a href="tel:05000000000" class="nav-cta">Merkezi Ara</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <div class="status-pill"><span class="status-dot"></span> BURSA MOBİL ŞEBEKESİ AKTİF</div>
+            <h1>Bursa Bölge Beyaz Eşya<br><span>Teknik Onarım Merkezi</span></h1>
+            <p class="lead">Ev teknolojileriniz için endüstriyel standartlarda, tam donanımlı şubelerimizle mühendislik tabanlı özel saha teknik destek çözümleri.</p>
+            <div class="cta-box">
+                <div class="cta-info"><h4>7/24 Merkez Kayıt Hattı</h4><p>0500 000 00 00</p></div>
+                <a href="tel:05000000000" class="btn-call">Merkezi Ara</a>
+            </div>
+        </div>
+        <div class="hero-image-area">
+            <div class="appliance-render">
+                <div class="appliance-panel"><div class="appliance-dial"></div><div class="appliance-display">DURUM: HAZIR</div></div>
+                <div class="appliance-door"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="trust-strip">
+        <div class="trust-container">
+            <div class="trust-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><strong>1 Yıl Resmî</strong> İşçilik ve Yedek Parça Garantisi</span></div>
+            <div class="trust-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span><strong>Sertifikalı</strong> Kıdemli Sektörel Teknik Kadro</span></div>
+            <div class="trust-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span><strong>Aynı Gün</strong> 2 Saat İçinde Adreste Onarım</span></div>
+        </div>
+    </section>
+
+    <main>
+        <div class="section-header"><h2>Teknik Onarım Segmentleri</h2><p>Kurumsal kalitede cihaz bazlı müdahale protokolleri.</p></div>
+        <div class="services-grid">
+            <div class="service-card"><div class="service-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M5 12h14M12 16h.01M12 6h.01"/></svg></div><h3>Buzdolabı Teknolojileri</h3><p>İnverter motor optimizasyonu, sensör onarımı ve gaz şarjı işlemleri.</p></div>
+            <div class="service-card"><div class="service-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><h3>Çamaşır Sistemleri</h3><p>Kazan rulman değişimi ve elektronik kart şebeke onarımları.</p></div>
+            <div class="service-card"><div class="service-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="18" height="12" x="3" y="6" rx="2"/><path d="M12 12h.01M8 12h.01M16 12h.01"/></svg></div><h3>Bulaşık Grupları</h3><p>Isıtıcı rezistans entegrasyonu ve mekanik pompa revizyonu.</p></div>
+        </div>
+
+        <div class="seo-panel" style="margin-bottom: 80px;">
+            <div class="seo-grid">
+                <div><h3 style="font-size:24px; font-weight:800; margin-bottom:12px;">Bursa Lojistik Dağıtım Ağı</h3><p style="color:var(--brand-muted); line-height:1.6;">Merkez veri tabanımıza düşen arıza bildirimleri, akıllı algoritmalarımız sayesinde ilgili ilçede konuşlandırılmış hazır mobil araçlarımıza anlık iletilir.</p></div>
+                <div class="district-list"><div class="district-btn">Nilüfer</div><div class="district-btn">Osmangazi</div><div class="district-btn">Yıldırım</div><div class="district-btn">Mudanya</div><div class="district-btn">Görükle</div><div class="district-btn">Özlüce</div></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="disclaimer-text"><strong>Yasal Şeffaflık Beyanı (Compliance Notice):</strong> Bursa Teknik Merkezi, bu web sitesinde adı geçen endüstriyel markaların (Bosch, Siemens, Profilo, Arçelik, Beko, Samsung vb.) <strong>yetkili servisi değildir.</strong> Kurumumuz, Bursa il sınırları içerisinde tüketici talebi doğrultusunda garantisi bitmiş cihazlara hizmet sunan tam bağımsız bir <strong>ÖZEL TEKNİK SERVİS</strong> altyapısıdır. Kayıtlı markalar sektörel referans amacıyla konumlandırılmıştır.</div>
+            <div class="footer-bottom">
+                <div>Copyright © 2026 Bursa Teknik Merkezi. Tüm hakları saklıdır.</div>
+                <div style="display:flex; gap:24px;"><span>Gizlilik Sözleşmesi</span><span>Kullanım Şartları</span></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
